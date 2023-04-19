@@ -1,5 +1,5 @@
 import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, filters
 
 # Definimos el token del bot
 TOKEN = '6288297385:AAG1dUr3aFiwodKo9v7fMD9UwBqXBhJVq5g'
@@ -25,7 +25,7 @@ def echo(update, context):
 
 # Creamos los manejadores para los comandos y mensajes
 start_handler = CommandHandler('start', start)
-echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
+echo_handler = MessageHandler(filters.text & (~filters.command), echo)
 
 # Añadimos los manejadores al updater
 updater.dispatcher.add_handler(start_handler)
